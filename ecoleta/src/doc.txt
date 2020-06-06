@@ -1,0 +1,53 @@
+import express, { request, response } from 'express'; //Ajuda na definição de rotas
+
+const app=express();
+app.use(express.json() );
+//Alguns tipos de requisiçõs
+//GET: Busca uma ou mais informações no back-end
+//POST: Cria uma nova informação no back-end 
+//PUT: Atualizar uma informação existente no back-end
+//DELETE: Remove uma informalçao no back-end
+//Request Body: Parâmetros para criação/atualização de informação
+//Knex.js => Biblioteca que permite trabalhar com bancos relacionais com a mesma linguagem
+
+//request.params: Parâmetro que vem na própria rota que identifica um recurso
+//Query.params:
+const users=[
+    'bla1',
+    'teste',
+    'Rafael'
+];
+
+
+app.get('/users',(request, response)=>{ 
+    const search= String(request.query.search);
+    const fiterdUsers = search ? users.filter(users => users.includes(search)) : users;
+    return response.json(fiterdUsers);
+
+}); 
+
+app.get('/users', (request, response)=>{ //Essa função é iniciada ao iniciar o programa o /users é uma rota. A rota normalmente é muito semântica
+    console.log('Lestagem de usuário');
+    return response.json(users);
+
+});
+
+app.get('/users/:id', (request, response)=>{//Quando você digita : e algo esse algo é um parâmetro
+    const id= request.params.id; //Recebe o ID
+    return response.json(users[parseInt(id)]); //retorna a posição do array 
+});
+
+app.post('/users',(request, response)=>{
+    const data= request.body;
+    console.log(data);
+
+    const user={
+        name: data.name,
+        email:data.email,
+    };
+    return response.json(user);
+});
+
+    
+
+app.listen(9999);//Ouve a porta da aplicação

@@ -1,0 +1,25 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "Arduino na Web",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "Rafael Rojas",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "express": "^4.17.1",
+    "mariadb": "^2.3.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.10",
+    "serialport": "^9.0.0",
+    "socket.io": "^2.3.0",
+    "sqlite3": "^4.2.0"
+  }
+}
