@@ -1,22 +1,22 @@
 const socket=io(); 
 
 let counter=2;//Orienta o eixo X
-socket.on('serial:data', function(dataSerial){
+socket.on('serial:data', function(dataSerial){//Recebimento dos dados do potenciômetro
     
     console.log(dataSerial);
     myChart.data.labels.push(counter);//preenche o eixo X com o contador
     myChart.data.datasets.forEach(dataset => {
-        dataset.data.push(dataSerial.value);
+        dataset.data.push(dataSerial.value);//Coloca o valor do potenciômetro no array
     });
-    counter=counter+2;
-    myChart.update();
+    counter=counter+2;//conta 2 segundos
+    myChart.update();// atualiza o gráfico
 });
 
 var ctx = document.getElementById('meuGrafico').getContext('2d');//Biblioteca chart.org - nome ID do meuGrafico recolhida
 var myChart = new Chart(ctx, {//Objeto new Chart
-    type: 'line',
+    type: 'line',//define o tipo do gráfico
     data: {
-        labels: ['Serial'],
+        labels: ['Serial'], //define as labels
         datasets: [{
             label: 'Serial',
             data: [],//Local onde os dados são colocados
