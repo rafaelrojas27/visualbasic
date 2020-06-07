@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    
+<img src="bau_fechado.png" id="bau" onclick="open_chest()" ondblclick="close_chest()">
+<img src="1.png" id="move" onclick="move()">
+    <script>
+        var count=0;
+        document.body.onkeypress = tecla;
+        
+        function tecla(){
+            var cap_key = event.keyCode;
+            move(cap_key);
+            //alert(cap_key);     
+        }
+
+        function move(move){ 
+            
+           switch(move){
+            case 119: moveUp(); break;
+            case 115: moveDown(); break;
+            case 97: moveLeft(); break;
+            case 100: moveRigh(); break;
+            default: moveUp(); break;
+            }
+        }
+        function moveUp(){
+            switch (count){
+                case 0: document.getElementById("move").src="b1.png"; count+=1;break;
+                case 1: document.getElementById("move").src="b2.png"; count+=1;break;
+                case 2: document.getElementById("move").src="b3.png"; count+=1;break;
+                case 3: document.getElementById("move").src="b4.png"; count=0; break;     
+                default: count=0;
+            }
+        }
+
+        function moveDown(){
+            switch (count){
+                case 0: document.getElementById("move").src="1.png"; count+=1;break;
+                case 1: document.getElementById("move").src="2.png"; count+=1;break;
+                case 2: document.getElementById("move").src="3.png"; count+=1;break;
+                case 3: document.getElementById("move").src="4.png"; count=0; break;     
+                default: count=0;
+            }
+        }
+        function moveLeft(){
+            switch (count){
+                case 0: document.getElementById("move").src="l1.png"; count+=1;break;
+                case 1: document.getElementById("move").src="l2.png"; count+=1;break;
+                case 2: document.getElementById("move").src="l3.png"; count+=1;break;
+                case 3: document.getElementById("move").src="l4.png"; count=0; break; 
+                default: count=0;    
+            }
+        }
+        function moveRigh(){
+            switch (count){
+                case 0: document.getElementById("move").src="r1.png"; count+=1;break;
+                case 1: document.getElementById("move").src="r2.png"; count+=1;break;
+                case 2: document.getElementById("move").src="r3.png"; count+=1;break;
+                case 3: document.getElementById("move").src="r4.png"; count=0; break;     
+                default: count=0;
+            }
+        }
+
+        //document.onkeydown=applyKey;
+        
+        function open_chest(){
+            document.getElementById("bau").src = "bau_aberto.png";
+        }
+        function close_chest(){
+            document.getElementById("bau").src = "bau_fechado.png";
+        }
+
+    </script>
+</body>
+</html>
