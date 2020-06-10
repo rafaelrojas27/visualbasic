@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>-->
+</head>
+<script src="src/calculadora.js"></script>
+<script src="src/array.js"></script>
+<style type="text/css">
+    body {
+    margin:0;
+    padding:0;
+    background:#cccccc;
+    text-align:center; /* hack para o IE */	
+        }
+    #tudo {
+    width: 760px;
+    margin:0 auto;			
+    padding: 10px;
+    text-align:left; /* "remédio" para o hack do IE */	
+        }
+    #conteudo {
+    padding: 5px;
+    background-color: #eeeeee;
+        }
+    </style>
+
+<body >
+    <h1>Minha Calculadora</h1><br>
+    <input type="number" id="n1" placeholder="Digite o Primeiro número"><br>
+    <input type="number" id="n2" placeholder="Digite o Segundo número"><br>
+    <input type="button" onclick="apagar()" value="CE">
+
+    <button type="button" onclick="calcular('+')" value="soma" > + </button> 
+    <button type="button" onclick="calcular('-')" value="sub"> - </button>
+    <button type="button" onclick="calcular('/')" value="mul" > / </button>
+    <button type="button" onclick="calcular('*')" value="div" > * </button>
+<br><br>
+<p id="result"></p>
+<br><br>
+<h1>Trabalhando com Array</h1>
+<input type="text" id="nome"><br>
+<button type="button" onclick="add()">Adicionar o nome</button><br>
+<button type="button" onclick="clean()">Apaga os nome</button><br>
+<button type="button" onclick="show()">Exibe os nomes</button><br>
+<p id="result2"></p>
+
+</body>
+</html>
