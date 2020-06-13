@@ -24,7 +24,7 @@ const io = socketio.listen(server); // Verifica o servidor o tempo todo
 //Configuração da Serial
 const Readline = SerialPort.parsers.Readline; // Criação do objeto para lermos 
 const parser = new Readline({delimiter: '\r\n'}); //Decodifica o Exadecimal em inteiro
-const mySerial = new SerialPort("/dev/ttyUSB0", { //Parta Serial do Arduino caminho USB do Linux
+const mySerial = new SerialPort("/dev/ttyUSB0", { //Porta Serial do Arduino caminho USB do Linux
     baudRate:9600,//Definição da velocidade da leitura
 }); //Porta do arduino
 
