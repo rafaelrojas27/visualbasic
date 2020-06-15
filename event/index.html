@@ -3,15 +3,20 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Exemplo de Eventos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type="text/css" href="style/cut.css" media="screen" />
 </head>
 <body>
     
 <img src="pics/bau_fechado.png" id="bau" onclick="open_chest()" ondblclick="close_chest()">
 <img src="pics/1.png" id="move" onclick="move()">
     
+    <div class="div">
+        <span>object-fit: cover; (imagem recortada)</span>
+        <img src="pics/slug.jpg" class="stopped" id="complete" vspace="35px" hspace="15px">   
+    </div>
     <script src="src/move.js"></script>
 </body>
 </html>

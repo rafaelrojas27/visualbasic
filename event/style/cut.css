@@ -1,0 +1,12 @@
+.stopped{
+    width: 600px;
+    height: 120px;
+
+}
+
+.div {
+    width: 600px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+}
