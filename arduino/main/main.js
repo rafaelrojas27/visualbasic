@@ -8,6 +8,10 @@ const http = require('http');
 const app=express();
 const server = http.createServer(app);
 
+server.listen(9999, 'localhost',()=>{
+
+});
+
 app.use(express.static('public')); //A pasta precisa ser declarada para o express entender que há arquivos estáticos lá
 
 app.get('/', (req, res, next)=>{ // Definição da rota, sendo raiz na URL
